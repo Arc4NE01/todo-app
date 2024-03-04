@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create_form input {
+  width: 300px;
+  padding: 10px;
+  border-bottom: 2px solid;
+  outline: none;
+}
+
+.create_form button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+/* Header.css */
+
+.bg-header {
+  background-color: #f8f9fa; /* Light gray background color */
+}
+
+.navbar {
+  /* Existing styles from previous step */
+  background-color: lightgray;
+  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+  /* Add some styling to the navigation links */
+  color: black; /* Text color */
+  padding: 10px 20px; /* Adjust padding as needed */
+  margin: 0 5px; /* Adjust margin as needed */
+  border-radius: 5px; /* Add rounded corners */
+  transition: background-color 0.3s ease; /* Add hover effect */
+}
+
+.nav-link:hover {
+  background-color: lightblue; /* Change background color on hover */
+}
+
+.nav-link.active {
+  /* Style for the active link */
+  font-weight: bold;
+  /* Add other styles for the active link as needed */
+}
+
+.navbar-brand {
+  font-weight: 700;
+  font-family: "roboto", sans-serif;
+  letter-spacing: 3px;
+}
