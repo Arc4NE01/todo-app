@@ -29,16 +29,6 @@
 
 /* Header.css */
 
-.bg-header {
-  background-color: #f8f9fa; /* Light gray background color */
-}
-
-.navbar {
-  /* Existing styles from previous step */
-  background-color: lightgray;
-  box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.1);
-}
-
 .nav-link {
   /* Add some styling to the navigation links */
   color: black; /* Text color */

@@ -15,7 +15,7 @@ const Homepage = () => {
         <Link to="/todolist" className="homepage-link">
           Todo List
         </Link>
-        <Link to="/signin" className="homepage-link">
+        <Link to="/login" className="homepage-link">
           Sign in
         </Link>
         <Link to="/generateroutine" className="homepage-link">

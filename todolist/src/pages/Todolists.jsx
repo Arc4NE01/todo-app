@@ -5,7 +5,7 @@ import Layout from "../Components/Layout";
 const Todolists = () => {
   const [todos, setTodos] = useState([]);
   return (
-    <Layout>
+    <Layout title={"Todo List"}>
       <div className="home">
         <h2>To Do List</h2>
         <Create />

@@ -5,7 +5,7 @@ import { NavLink, Link } from "react-router-dom";
 const Header = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-header">
+      <nav className="navbar navbar-expand-lg ">
         <div className="container-fluid">
           <button
             className="navbar-toggler"
@@ -45,7 +45,7 @@ const Header = () => {
                 </NavLink>
               </li>
               <li className="nav-item">
-                <NavLink to="/signup" className="nav-link" href="#">
+                <NavLink to="/register" className="nav-link" href="#">
                   Signup
                 </NavLink>
               </li>
