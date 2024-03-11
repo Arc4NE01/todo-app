@@ -23,14 +23,26 @@
 }
 
 .homepage-link {
-  margin: 0 315px; /* Add space between links */
   text-decoration: none;
   color: blue;
   font-size: 20px;
   white-space: nowrap; /* Prevent text from wrapping */
   transition: color 0.3s ease; /* Transition for color change */
+  margin: 0 150px;
 }
 
 .homepage-link:hover {
   color: red; /* Change color on hover */
+}
+
+.homepage-username {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 1rem;
+  font-weight: normal; /* Reset the font-weight to normal for the username */
+}
+
+.header-username {
+  font-weight: normal;
+  /* Add any other styles for the header username */
 }

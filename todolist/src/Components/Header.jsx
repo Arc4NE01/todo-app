@@ -1,8 +1,19 @@
 import React from "react";
 import { TbChecklist } from "react-icons/tb";
 import { NavLink, Link } from "react-router-dom";
+import { useAuth } from "../Context/context";
 
 const Header = () => {
+  const [auth, setAuth] = useAuth();
+  const handleLogout = () => {
+    setAuth({
+      ...auth,
+      user: null,
+      token: "",
+    });
+    localStorage.removeItem("auth");
+    toast.success("Logout Successful");
+  };
   return (
     <>
       <nav className="navbar navbar-expand-lg ">
@@ -44,16 +55,57 @@ const Header = () => {
                   Generate Routine
                 </NavLink>
               </li>
-              <li className="nav-item">
-                <NavLink to="/register" className="nav-link" href="#">
-                  Signup
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink to="/login" className="nav-link" href="#">
-                  Login
-                </NavLink>
-              </li>
+              {!auth.user ? (
+                <>
+                  <li className="nav-item">
+                    <NavLink to="/register" className="nav-link">
+                      Register
+                    </NavLink>
+                  </li>
+                  <li className="nav-item">
+                    <NavLink to="/login" className="nav-link">
+                      Login
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item dropdown">
+                    <NavLink
+                      className="nav-link dropdown-toggle"
+                      href="#"
+                      role="button"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
+                      <span className="header-username">
+                        {auth?.user?.name}
+                      </span>
+                    </NavLink>
+                    <ul className="dropdown-menu">
+                      <li>
+                        <NavLink
+                          to={`/dashboard/${
+                            auth?.user?.role === 1 ? "admin" : "user"
+                          }`}
+                          className="nav-link"
+                        >
+                          Dashboard
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          onClick={handleLogout}
+                          to="/login"
+                          className="nav-link"
+                        >
+                          Logout
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </li>
+                </>
+              )}
             </ul>
           </div>
         </div>

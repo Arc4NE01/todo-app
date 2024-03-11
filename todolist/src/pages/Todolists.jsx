@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import Create from "../Create";
 import Layout from "../Components/Layout";
+import { useAuth } from "../Context/context";
 
 const Todolists = () => {
   const [todos, setTodos] = useState([]);
+  const [auth, setAuth] = useAuth();
   return (
     <Layout title={"Todo List"}>
       <div className="home">
@@ -16,6 +18,9 @@ const Todolists = () => {
         ) : (
           todos.map((todo, index) => <div key={index}>{todo}</div>)
         )}
+      </div>
+      <div>
+        <pre>{JSON.stringify(auth.user, null, 4)}</pre>
       </div>
     </Layout>
   );

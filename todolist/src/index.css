@@ -30,22 +30,20 @@
 /* Header.css */
 
 .nav-link {
-  /* Add some styling to the navigation links */
-  color: black; /* Text color */
-  padding: 10px 20px; /* Adjust padding as needed */
-  margin: 0 5px; /* Adjust margin as needed */
-  border-radius: 5px; /* Add rounded corners */
-  transition: background-color 0.3s ease; /* Add hover effect */
+  color: black;
+  padding: 10px 20px;
+  margin: 0 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  font-weight: normal;
 }
 
 .nav-link:hover {
-  background-color: lightblue; /* Change background color on hover */
+  background-color: lightblue;
 }
 
 .nav-link.active {
-  /* Style for the active link */
   font-weight: bold;
-  /* Add other styles for the active link as needed */
 }
 
 .navbar-brand {
@@ -53,3 +51,8 @@
   font-family: "roboto", sans-serif;
   letter-spacing: 3px;
 }
+
+.nav-item .dropdown-menu .nav-link {
+  font-weight: normal;
+}
+

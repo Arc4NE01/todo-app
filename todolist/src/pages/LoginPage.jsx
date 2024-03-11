@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { toast } from "react-toastify";
 import axios from "axios";
 import Layout from "../Components/Layout";
+import { useAuth } from "../Context/context";
 
 const LoginContainer = styled.div`
   display: flex;
@@ -62,20 +63,25 @@ const Button = styled.button`
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [auth, setAuth] = useAuth();
   const navigate = useNavigate();
-
-  const API_URL = import.meta.env.VITE_API_URL;
+  const location = useLocation();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`${API_URL}/api/v1/auth/login`, {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_URL}/api/v1/auth/login`,
+        {
+          email,
+          password,
+        }
+      );
       if (res.data.success) {
         toast.success(res.data.message);
-        navigate("/");
+        setAuth({ ...auth, user: res.data.user, token: res.data.token });
+        localStorage.setItem("auth", JSON.stringify(res.data));
+        navigate(location.state || "/");
       } else {
         toast.error(res.data.message);
       }
