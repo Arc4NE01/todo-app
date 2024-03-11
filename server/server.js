@@ -5,6 +5,7 @@ import morgan from "morgan";
 import connectDB from "./config/db.js";
 import dotenv from "dotenv";
 import authRoutes from "./Routes/authRoute.js";
+import taskRoutes from "./Routes/taskRoute.js";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ app.use(express.json());
 
 //routes
 app.use("/api/v1/auth", authRoutes);
+app.use("/api/v1/task", taskRoutes);
 
 app.post("/add", (req, res) => {
   const task = req.body.task;
