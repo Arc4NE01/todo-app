@@ -15,7 +15,7 @@ export const createTaskController = async (req, res) => {
       return res.status(400).send({ message: "Title is required" });
     }
 
-    const userId = req.user._id; // Assuming the authenticated user's ID is available in req.user.id
+    const userId = req.user._id; 
 
     const newTask = await TaskModel.create({
       title,
